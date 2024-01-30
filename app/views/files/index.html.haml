@@ -1,0 +1,2 @@
+- @files.map do |file|
+  %div{ data: { action: "#{params[:select_action]} click->search#populateContent" }, class: 'hover:bg-[#cccccc] p-4' }= file

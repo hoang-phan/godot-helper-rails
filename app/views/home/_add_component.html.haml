@@ -1,0 +1,9 @@
+%h1.text-2xl Add component
+.my-4{ data: { controller: 'component' } }
+  = form_tag components_path, method: :post do
+    %p.mt-4 Component file
+    = render 'shared/search', name: :component, options: { component_target: 'component', extension: '.tscn', root: 'components' }
+    %p.mt-4 Scene file
+    = render 'shared/search', name: :scene, options: { component_target: 'scene', extension: '.tscn', root: 'project' }
+    .my-4
+      = submit_tag 'Submit', class: 'bg-indigo-500 text-white p-4 rounded cursor-pointer hover:bg-indigo-600'

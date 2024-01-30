@@ -1,0 +1,11 @@
+%h1.text-2xl Add animation
+.my-4{ data: { controller: 'animation' } }
+  = form_tag animations_path, method: :post do
+    %p.mt-4 FBX Model file
+    = render 'shared/search', name: :fbx, options: { extension: '.fbx', animation_target: 'fbx' }
+    %p.mt-4 Scene file
+    = render 'shared/search', name: :scene, options: { extension: '.tscn', animation_target: 'scene', root: 'project' }
+    %p.mt-4 Actions
+    = text_field_tag :actions, '', data: { animation_target: 'actions' }
+    .my-4
+      = submit_tag 'Submit', class: 'bg-indigo-500 text-white p-4 rounded cursor-pointer hover:bg-indigo-600'

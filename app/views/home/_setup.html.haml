@@ -1,0 +1,4 @@
+%h1.text-2xl Setup
+.my-4{ data: { controller: 'home' } }
+  %p.mt-4 Project directory
+  = render 'shared/search', name: :query, value: Rails.cache.read('project_path'), options: { select_action: 'click->home#updateProjectPath' }

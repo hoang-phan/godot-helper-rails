@@ -1,0 +1,3 @@
+%div{ data: { controller: 'search' } }
+  = text_field_tag local_assigns[:name] || :query, local_assigns[:value], data: { action: 'keyup->search#filterResults focus->search#displayDropdown', search_target: 'query' }.merge(local_assigns[:options] || {}), class: 'w-full'
+  .border{ data: { search_target: 'searchResults' }, class: 'absolute border-[#aaaaaa] bg-white' }
